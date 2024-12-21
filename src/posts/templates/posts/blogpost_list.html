@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% load widget_tweaks %}
+
+{% block title %}
+    <title>Page du blog</title>
+{% endblock title %}
+
+
+{% block content%}
+
+    <div class=" h-[60px] flex justify-center items-center font-bold text-3xl">
+        <h1 class="">le blog de hugo</h1>
+    </div>
+    
+    {% for post in posts%}
+        <article class="flex justify-center">
+            <div class="bg-white w-[500px] h-[220px] rounded-lg text-center mb-[30px]">
+                <h5 class="mt-[5px] font-light">Publié par <i>{{ post.author.username }}</i> le {{ post.created_on|date:'l j F Y' }}</h5>
+                <h2 class="font-bold text-xl mt-[10px]">{{post.title}}</h2>
+
+                
+            <p  class="line-clamp-2 break-words">{{ post.content|safe|truncatewords:50}}</p>
+
+            <form action="{% url 'posts:post' slug=post.slug %}">
+                <button class="mt-[15px] bg-blue-400 h-[30px] w-[100px] rounded mb-[10px]">Lire l'article</button>
+            </form>
+            {% if request.user.is_authenticated %}
+                <div class="flex justify-center">
+                    <a class="font-bold text-amber-500 mr-[10px]" href="{% url 'posts:update' slug=post.slug %}">Editer</a>
+                    <a class="font-bold text-red-600 ml-[10px] " href="{% url 'posts:delete' slug=post.slug %}">Supprimer<a/>  
+                </div>
+            {% endif %}
+            </div>
+            
+            
+            
+        </article>
+    {% endfor %}    
+{% endblock content%}
