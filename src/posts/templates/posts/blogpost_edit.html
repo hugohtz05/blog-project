@@ -7,36 +7,30 @@
 {% endblock title %}
 
 {% block content %}
-    <!-- En-tête -->
+
     <div class="h-[80px] bg-gradient-to-r from-blue-500 to-blue-700 flex justify-center items-center font-bold text-4xl text-white shadow-lg mb-6">
         <h1>Éditer un article</h1>
     </div>
 
-    <!-- Formulaire d'édition -->
     <div class="container mx-auto p-6 max-w-lg">
         <form method="POST" class="bg-white p-6 rounded-lg shadow-lg space-y-6">
             {% csrf_token %}
             
-            <!-- Titre -->
             <div class="space-y-4">
                 <label for="{{ form.title.id_for_label }}" class="font-medium text-gray-700">Titre de l'article</label>
                 {{ form.title|add_class:"border border-gray-300 rounded-lg p-3 w-full focus:ring-blue-500 focus:border-blue-500" }}
             </div>
 
-            <!-- Contenu -->
             <div class="space-y-4">
                 <label for="{{ form.content.id_for_label }}" class="font-medium text-gray-700">Contenu de l'article</label>
                 {{ form.content|add_class:"border border-gray-300 rounded-lg p-3 w-full focus:ring-blue-500 focus:border-blue-500" }}
             </div>
 
-            <!-- Case à cocher pour publier -->
             <div class="space-y-4">
-                <label for="{{ form.is_published.id_for_label }}" class="font-medium text-gray-700">Publier l'article</label>
-                <!-- Case à cocher -->
-                <input type="checkbox" name="{{ form.is_published.name }}" id="{{ form.is_published.id_for_label }}" {% if form.is_published.value %}checked{% endif %} class="border border-gray-300 rounded-lg p-3 focus:ring-blue-500 focus:border-blue-500" />
+                <label for="{{ form.published.id_for_label }}" class="font-medium text-gray-700">Publier l'article</label>
+                <input type="checkbox" name="{{ form.published.name }}" id="{{ form.published.id_for_label }}" {% if form.published.value %}checked{% endif %} class="border border-gray-300 rounded-lg p-3 focus:ring-blue-500 focus:border-blue-500" />
             </div>
 
-            <!-- Bouton de soumission -->
             <div class="text-center">
                 <input type="submit" value="Sauvegarder les modifications" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300 cursor-pointer">
             </div>
