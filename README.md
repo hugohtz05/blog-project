@@ -15,6 +15,6 @@ Pour vous connecter à l'administration, utilisez les identifiants suivants :
 - **Nom d'utilisateur :** `hugoh`  
 - **Mot de passe :** `123456`
 
-Pour accédez a l'accueil du blog voici le lien : https://hugohtz.pythonanywhere.com/blog/
-Accédez à l'interface d'administration à l'URL suivante : https://hugohtz.pythonanywhere.com/admin/
+- Pour accédez a l'accueil du blog voici le lien : https://hugohtz.pythonanywhere.com/blog/
+- Accédez à l'interface d'administration à l'URL suivante : https://hugohtz.pythonanywhere.com/admin/
 
