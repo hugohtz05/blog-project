@@ -1,6 +1,6 @@
 # Blog Django
 
-Ce projet est un blog développé avec Django. Il a été créé dans le but d'améliorer mes compétences en utilisant le framework Django.
+Ce projet est un blog développé avec Django dans le cadre d'une formation. Il a été créé dans le but d'améliorer mes compétences en utilisant le framework Django.
 
 ## Fonctionnalités
 
